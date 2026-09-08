@@ -1,0 +1,14 @@
+#+title: Dotfiles
+#+author: Joar von Arndt
+
+This repository contains a subset of my dotfiles, the vernacular term for UNIX
+hidden files that begin with a period. These are often used to configure various
+services and programs on the machine.
+
+These are files are quite heavily tied to my own computer, and in practice also
+to [[https://github.com/JanJoar/kudu-emacs][Kudu Emacs]], my personal configuration of GNU Emacs and GNU Guix. For example,
+=.ssh= contains [[https://age-encryption.org/][age]] public keys corresponding to identities kept on my personal
+Yubikeys.
+
+To deploy these files I use [[https://www.gnu.org/software/stow/][GNU Stow]] to automatically create symlinks across my
+home directory and be able to maintain these files in an a single repository.
