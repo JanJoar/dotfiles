@@ -1,0 +1,80 @@
+# Terminal
+
+super + c
+      exec kitty
+
+super + space
+    rofi -show run
+
+super + e
+      exec emacsclient -r
+
+super + ctrl + f
+    exec firefox
+
+# Take a screenshot!
+
+Print
+      exec scrot -f -s -F '/home/jovo/Pictures/Screenshots/%Y-%m-%d-%H-%M.png'
+
+# Rofi
+
+super + Return
+      exec kitty
+
+# Make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# quit/restart bspwm
+super + alt + {q,r}
+	bspc {quit,wm -r}
+
+# Lock the screen
+super + l
+      exec betterlockscreen -l --display 0
+
+# Quit application
+super + q
+      bspc node -c
+
+# alternate between the tiled and monocle layout
+super + n
+	bspc desktop -l next
+
+# set the window state
+super + {t,p,s}
+    bspc node -t {tiled,pseudo_tiled,floating}
+
+# Toggle fullscreen and update the Quickshell bar immediately. The watcher
+# continues polling for browser/application fullscreen changes.
+super + f
+    bspc node -t fullscreen; ~/.config/bspwm/quickshell-fullscreen-watch.sh --once
+
+# Focus in the given direction
+super + {_,shift + }{Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+
+# focus the next/previous window in the current desktop
+super + o
+	bspc node -f next.local.!hidden.window
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+# preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+super + ctrl + space
+	bspc node -p cancel
+
+# expand a window by moving one of its side outward
+super + alt + {a,s,w,d}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# Shrink a window by moving one of its side outward
+super + {a,s,w,d}
+	bspc node -z {left 20 0,bottom 0 -20,top 0 20,right -20 0}
