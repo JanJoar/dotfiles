@@ -1,0 +1,90 @@
+(defpoll calendar_day :interval "20h" "date '+%d'")
+(defpoll calendar_year :interval "20h" "date '+%Y'")
+
+(defwidget bar []
+           (centerbox :orientation "h"
+                      (battery)
+                      (music)
+                      (sidestuff)))
+
+(defwidget sidestuff []
+           (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end"
+                (button :onclick "exec /home/jovo/.config/eww/scripts/calendar.sh"
+                        time)))
+
+
+(defwidget workspaces []
+           (box :class "workspaces"
+                :orientation "h"
+                :space-evenly true
+                :halign "start"
+                :spacing 10
+                (button :onclick "wmctrl -s 0" 1)
+                (button :onclick "wmctrl -s 1" 2)
+                (button :onclick "wmctrl -s 2" 3)
+                (button :onclick "wmctrl -s 3" 4)
+                (button :onclick "wmctrl -s 4" 5)
+                (button :onclick "wmctrl -s 5" 6)
+                (button :onclick "wmctrl -s 6" 7)
+                (button :onclick "wmctrl -s 7" 8)
+                (button :onclick "wmctrl -s 8" 9)))
+
+(defwidget music []
+           (box :class "music"
+                :orientation "h"
+                :space-evenly false
+                :halign "center"
+                {music != "" ? "${music}" : ""}))
+
+
+(defwidget metric [label value onchange]
+           (box :orientation "h"
+                :class "metric"
+                :space-evenly false
+                (box :class "label" label)
+                (scale :min 0
+                       :max 101
+                       :active {onchange != ""}
+                       :value value
+                       :onchange onchange)))
+
+(defwidget cal []
+	   (box :class "cal" :orientation "v"
+	        (box :class "cal-in"
+	             (calendar :class "cal" 
+			       :day 31
+			       :year 2024))))
+
+(defwindow calendar
+	   :geometry (geometry :x "-20px" 
+			       :y "6%" 
+                               :anchor "top right"
+			       :width "270px" 
+			       :height "60px")
+           (cal))
+
+(defwidget battery []
+           (box :class "battery"
+                :orientation "h"
+                :halign "start"
+                :tooltip "Battery percentage"
+                battery-percentage "%"))
+(defpoll battery-percentage :interval "30s"
+         "cat /sys/class/power_supply/BAT*/capacity")
+
+(deflisten music :initial ""
+           "playerctl --follow metadata --format '{{ title }}' || true")
+
+(defpoll time :interval "10s"
+         "date '+%H:%M %b %d, %Y'")
+
+(defwindow bar
+           :monitor 0
+           :windowtype "Desktop"
+           :geometry (geometry :x "0%"
+                               :y "0%"
+                               :width "100%"
+                               :height "10px"
+                               :anchor "top center")
+           :reserve (struts :side "top" :distance "4%")
+           (bar))

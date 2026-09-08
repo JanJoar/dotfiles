@@ -34,5 +34,5 @@ exec mpDris2 &
 
 # Redshift for Taipei, the Republic of China
 exec redshift -P -l 25.0330:121.5654 -t 6600:4500
-exec ~/source/eww/target/release/eww daemon &
-exec ~/source/eww/target/release/eww open bar &
+exec eww -c ~/.config/eww daemon &
+exec eww -c ~/.config/eww open bar &

@@ -1,0 +1,106 @@
+$main-text-color: #e8e3e3;
+$secondary-text-color: #B66467;
+$tertiary-text-color: #8C977D;
+
+$main-bg-color: #000000;
+$secondary-bg-color: #414141; 
+$tertiary-bg-color: #151515;
+
+* {
+    all: unset; //Unsets everything so you can style everything from scratch
+    font-size: 14px;
+}
+
+//Global Styles
+.bar {
+    background-color: $main-bg-color;
+    color: $main-text-color;
+    padding: 10px;
+}
+
+// Styles on classes (see eww.yuck for more information)
+
+.sidestuff slider {
+    all: unset;
+    color: $tertiary-text-color;
+}
+
+.metric scale trough highlight {
+    all: unset;
+    background-color: $tertiary-text-color;
+    color: $main-text-color;
+    //    border-radius: 10px;
+}
+.metric scale trough {
+    all: unset;
+    background-color: $secondary-text-color;
+    //    border-radius: 50px;
+    min-height: 3px;
+    min-width: 50px;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+.metric scale trough highlight {
+    all: unset;
+    background-color: $tertiary-bg-color;
+    color: $main-text-color;
+}
+.battery {
+    color: $main-text-color;
+}
+
+.battery:hover {
+    color: $tertiary-text-color;
+}
+
+.workspaces button:hover {
+    color: $tertiary-text-color;
+}
+
+// Calendar
+.cal {
+    background-color: $main-bg-color;
+    font-family: IosevkaComfy;
+    font-size: 18px;
+    font-weight: normal;
+
+    .cal-in {
+        padding: 0px 10px 0px 10px;
+        color: $main-text-color;
+
+        .cal {
+            &.highlight {
+                padding: 20px;
+            }
+
+            padding: 5px 5px 5px 5px;
+            margin-left: 10px;
+        }
+    }
+}
+
+calender {
+    color: $secondary-bg-color;
+}
+calendar:selected {
+    color: $tertiary-text-color;
+}
+
+calendar.header {
+    color: $secondary-bg-color;
+    font-weight: bold;
+}
+
+calendar.button {
+    color: $secondary-bg-color;
+    
+}
+
+calendar.highlight {
+    color: $secondary-bg-color;
+    font-weight: bold;
+}
+
+calendar:indeterminate {
+    color: $secondary-text-color;
+}
