@@ -50,5 +50,5 @@
 [urgency_critical]
     # Red/Magenta for critical urgency
     background = "#ffffff"
-    foreground = "#a60000"
+    foreground = "#950000"
     timeout = 0
