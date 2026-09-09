@@ -18,8 +18,8 @@ bspc rule -a 'Firefox' state=tiling
 bspc rule -a 'emacs' state=tiling
 bspc rule -a 'pinentry*' state=floating
 
-bspc config normal_border_color "#000000"
-bspc config focused_border_color "#ffffff"
+bspc config normal_border_color "#ffffff"
+bspc config focused_border_color "#000000"
 
 exec ~/.screenlayout/laptop.sh &
 exec dunst &
