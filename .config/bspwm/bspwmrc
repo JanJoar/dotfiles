@@ -22,7 +22,6 @@ bspc config normal_border_color "#ffffff"
 bspc config focused_border_color "#000000"
 
 exec ~/.screenlayout/laptop.sh &
-exec dunst &
 exec ./batterycheck.sh &
 exec picom -b &
 exec notify-send -a "BSPWM" -u normal  -t 10000 "Happy hacking!" -i "/home/jovo/Pictures/Chan/JagNärJagÄterFrukostPåTisdagMorgonOchHarHurMycketTidSomHelstEftersomDetärSovmorgon.jpg" "Bspwm has started" &

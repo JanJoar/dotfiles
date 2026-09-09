@@ -35,12 +35,6 @@
     foreground = "#000000"
     background = "fffffff"
 
-    # Keybindings
-    close = ctrl+space
-    close_all = ctrl+shift+space
-    history = ctrl+shift+h
-    context = ctrl+shift+period
-
 [urgency_low]
     # Green for low urgency
     background = "#ffffff"
