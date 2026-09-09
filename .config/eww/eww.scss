@@ -9,6 +9,7 @@ $tertiary-bg-color: #151515;
 * {
     all: unset; //Unsets everything so you can style everything from scratch
     font-size: 14px;
+    font-family: CartographCF;
 }
 
 //Global Styles
@@ -60,8 +61,7 @@ $tertiary-bg-color: #151515;
 // Calendar
 .cal {
     background-color: $main-bg-color;
-    font-family: IosevkaComfy;
-    font-size: 18px;
+    font-family: CartographCF;
     font-weight: normal;
 
     .cal-in {
