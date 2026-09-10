@@ -30,6 +30,7 @@
     min_icon_size = 0
     max_icon_size = 32
     icon_path = /usr/share/icons/gnome/16x16/status:/usr/share/icons/gnome/16x16/devices
+    always_run_script = true
 
     # Text colors
     foreground = "#000000"
@@ -52,3 +53,6 @@
     background = "#ffffff"
     foreground = "#950000"
     timeout = 0
+
+[notification-sound]
+    script = /home/jovo/.config/dunst/notification-sound
