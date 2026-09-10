@@ -34,3 +34,5 @@ exec mpDris2 &
 exec redshift -P -l 25.0330:121.5654 -t 6600:4500 &
 exec eww -c ~/.config/eww daemon &
 exec eww -c ~/.config/eww open bar &
+
+bspc config -m eDP-1 top_padding         38
