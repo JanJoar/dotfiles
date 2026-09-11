@@ -68,7 +68,10 @@
                 :orientation "h"
                 :halign "start"
                 :tooltip "Battery percentage"
-                battery-percentage "%"))
+                (label :text battery-icon)
+                (label :text "${battery-percentage}%")))
+(defpoll battery-icon :interval "10s"
+         "/home/jovo/.config/eww/scripts/battery.sh")
 (defpoll battery-percentage :interval "30s"
          "cat /sys/class/power_supply/BAT*/capacity")
 
