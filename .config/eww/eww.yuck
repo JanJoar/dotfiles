@@ -79,7 +79,7 @@
            "playerctl --follow metadata --format '{{ title }}' || true")
 
 (defpoll time :interval "10s"
-         "date '+%H:%M %b %d, %Y'")
+         "date '+%a, %b %d ǀ %H:%M'")
 
 (defwindow bar
            :monitor 0
