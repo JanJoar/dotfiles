@@ -1,21 +1,24 @@
-$main-text-color: #e8e3e3;
-$secondary-text-color: #B66467;
-$tertiary-text-color: #8C977D;
+$main-text-color: #000000;
+$bar-text-color: #e8e3e3;
 
-$main-bg-color: #000000;
-$secondary-bg-color: #414141; 
+$secondary-text-color: #721045;
+$tertiary-text-color: #006800;
+
+$bar-bg-color: #000000;
+$main-bg-color: #ffffff;
+$secondary-bg-color: #9f9f9f;
 $tertiary-bg-color: #151515;
 
 * {
-    all: unset; //Unsets everything so you can style everything from scratch
+    all: unset;
     font-size: 14px;
     font-family: CartographCF;
 }
 
 //Global Styles
 .bar {
-    background-color: $main-bg-color;
-    color: $main-text-color;
+    background-color: $bar-bg-color;
+    color: $bar-text-color;
     padding: 10px;
 }
 
