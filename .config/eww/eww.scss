@@ -82,6 +82,32 @@ $tertiary-bg-color: #151515;
     }
 }
 
+.org-agenda {
+    padding: 0px 10px 0px 10px;
+    color: $main-text-color;
+}
+
+.org-agenda-title {
+    color: $secondary-text-color;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.org-event {
+    padding: 0px 6px;
+    border-left: 3px solid $secondary-text-color;
+}
+
+.org-event.done {
+    opacity: 0.55;
+}
+
+.org-event-text {
+    color: $main-text-color;
+    min-width: 0px;
+}
+
 calender {
     color: $secondary-bg-color;
 }
