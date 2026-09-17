@@ -3,10 +3,11 @@ if status is-interactive
     function fish_prompt
        if fish_is_root_user
           set_color normal
-           string join '' (set_color blue) (prompt_pwd) (set_color normal) ' Λ '
+          string join '' (set_color blue) (prompt_pwd) (set_color normal) ' Λ '
+       else
+          set_color normal
+          string join '' (set_color blue) (prompt_pwd) (set_color normal) ' λ '
        end
-       set_color normal
-       string join '' (set_color blue) (prompt_pwd) (set_color normal) ' λ '
     end
     set -U fish_greeting
 end
