@@ -1,6 +1,12 @@
 (defpoll calendar_day :interval "20h" "date '+%d'")
 (defpoll calendar_year :interval "20h" "date '+%Y'")
 
+; The adapter reuses quickshell/pill/orgbridge.py, so Eww and the pill use
+; exactly the same org-agenda-files and Emacs TODO semantics.
+(defpoll org-agenda :interval "60s"
+         :initial "[]"
+         "/home/jovo/.dotfiles/.config/eww/scripts/org-agenda.py")
+
 (defwidget bar []
            (centerbox :orientation "h"
                       (battery)
@@ -49,18 +55,40 @@
                        :onchange onchange)))
 
 (defwidget cal []
-	   (box :class "cal" :orientation "v"
-	        (box :class "cal-in"
-	             (calendar :class "cal" 
-			       :day 31
-			       :year 2024))))
+           (box :class "cal" :orientation "v" :space-evenly false
+                :vexpand false :valign "start"
+                (box :class "cal-in"
+                     :vexpand false :valign "start"
+                     (calendar :class "cal"))
+                (box :class "org-agenda"
+                     :orientation "v"
+                     :vexpand false
+                     :valign "start"
+                     (label :class "org-agenda-title"
+                            :vexpand false
+                            :valign "start"
+                            :text "ORG AGENDA")
+                     (box :class "org-agenda-items"
+                          :orientation "v"
+                          :vexpand false
+                          :valign "start"
+                          (for event in org-agenda
+                               (box :class {event.done ? "org-event done" : "org-event"}
+                                    :orientation "h"
+                                    :vexpand false
+                                    :valign "start"
+                                    (label :class "org-event-text"
+                                           :limit-width 30
+                                           :show-truncated true
+                                           :vexpand false
+                                           :valign "start"
+                                           :text {event.text})))))))
 
 (defwindow calendar
 	   :geometry (geometry :x "-20px" 
 			       :y "6%" 
                                :anchor "top right"
-			       :width "270px" 
-			       :height "60px")
+			       :width "270px")
            (cal))
 
 (defwidget battery []
