@@ -1,0 +1,38 @@
+# UI
+set default-bg "#ffffff"
+set default-fg "#000000"
+
+set statusbar-bg "#ffffff"
+set statusbar-fg "#000000"
+
+set inputbar-bg "#ffffff"
+set inputbar-fg "#3548cf"
+
+set notification-bg "#181825"
+set notification-fg "#ffffff"
+set notification-error-bg "#f38ba8"
+set notification-error-fg "#1e1e2e"
+
+# Search highlighting
+set highlight-fg "#ffffff"
+set highlight-color "rgba(53,72,207,0.4)"
+set highlight-active-color "rgba(143,0,117,0.6)"
+
+# Search behavior
+set incremental-search true
+set abort-clear-search true
+set nohlsearch false
+set search-hadjust true
+
+map <C-s> feedkeys /
+map <C-r> feedkeys ?
+map n search forward
+map p search backward
+
+# Navigation
+
+map f navigate next
+map b navigate previous
+
+# Other
+set selection-clipboard clipboard
