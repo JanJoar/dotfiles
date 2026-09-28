@@ -68,7 +68,7 @@ super + ctrl + {1-9}
 	bspc node -o 0.{1-9}
 
 # cancel the preselection for the focused node
-super + ctrl + space
+super + g
 	bspc node -p cancel
 
 # expand a window by moving one of its side outward
@@ -78,3 +78,7 @@ super + alt + {a,s,w,d}
 # Shrink a window by moving one of its side outward
 super + {a,s,w,d}
 	bspc node -z {left 20 0,bottom 0 -20,top 0 20,right -20 0}
+
+# Preselct the direction of a split
+super + {h,j,k,l}
+    bspc node --presel-dir {west,south,north,east}
